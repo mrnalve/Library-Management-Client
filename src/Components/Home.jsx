@@ -4,7 +4,7 @@ import BookCard from "./BookCard";
 const Home = () => {
   const [booksData, setBooksData] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/addBook")
+    fetch("https://lm-server-mrnalve.vercel.app/addBook")
       .then((res) => res.json())
       .then((data) => {
         setBooksData(data)

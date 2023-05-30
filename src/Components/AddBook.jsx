@@ -21,7 +21,7 @@ const AddBook = () => {
       bookRating,
     };
     console.log(bookData);
-    fetch("http://localhost:5000/addBook", {
+    fetch("https://lm-server-mrnalve.vercel.app/addBook", {
       method: "POST",
       headers: {
         "content-type": "application/json",

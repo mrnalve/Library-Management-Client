@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 const MyBorrowedRow = ({ book, handleReturn }) => {
   const [update, setUpdate] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/addBook/${book.bookId}`)
+    fetch(`https://lm-server-mrnalve.vercel.app/addBook/${book.bookId}`)
       .then((res) => res.json())
       .then((data) => {
         setUpdate(data);

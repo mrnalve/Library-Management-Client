@@ -17,7 +17,7 @@ const BookCard = ({ bookData }) => {
           bookRating,
           email: user.email,
         };
-        fetch("http://localhost:5000/borrowed", {
+        fetch("https://lm-server-mrnalve.vercel.app/borrowed", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -40,7 +40,7 @@ const BookCard = ({ bookData }) => {
 
   const updateBookQuantity = (_id, quantity) => {
     // Send a request to the backend to update the book quantity
-    fetch(`http://localhost:5000/borrowed/${_id}`, {
+    fetch(`https://lm-server-mrnalve.vercel.app/borrowed/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

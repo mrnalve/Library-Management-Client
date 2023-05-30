@@ -4,13 +4,13 @@ const MyBorrowedRow = ({ book }) => {
   const [alertMessage, setAlertMessage] = useState("");
 
   const handleReturn = () => {
-    fetch(`http://localhost:5000/borrowed/${book._id}`, {
+    fetch(`https://lm-server-mrnalve.vercel.app/borrowed/${book._id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
       .then((data) => {
         if (data.success) {
-          fetch(`http://localhost:5000/addBook/${book.bookId}`, {
+          fetch(`https://lm-server-mrnalve.vercel.app/addBook/${book.bookId}`, {
             method: "PUT",
             headers: {
               "Content-Type": "application/json",

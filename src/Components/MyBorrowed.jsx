@@ -7,7 +7,7 @@ const MyBorrowed = () => {
   const { user } = useContext(AuthContext);
   const [books, setBooks] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/borrowed?email=${user?.email}`)
+    fetch(`https://lm-server-mrnalve.vercel.app/borrowed?email=${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setBooks(data);
@@ -19,7 +19,7 @@ const MyBorrowed = () => {
   const handleReturn = (_id, bookQuantity, bookId) => {
     const updatedQuantity = bookQuantity + 1;
     console.log(updatedQuantity);
-    fetch(`http://localhost:5000/borrowed/${bookId}`, {
+    fetch(`https://lm-server-mrnalve.vercel.app/borrowed/${bookId}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -33,7 +33,7 @@ const MyBorrowed = () => {
       .catch((error) => {
         console.error("Error updating book quantity:", error);
       });
-    fetch(`http://localhost:5000/borrowed/${_id}`, {
+    fetch(`https://lm-server-mrnalve.vercel.app/borrowed/${_id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

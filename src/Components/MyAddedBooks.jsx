@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 const MyAddedBooks = () => {
   const [booksData, setBooksData] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/addBook")
+    fetch("https://lm-server-mrnalve.vercel.app/addBook")
       .then((res) => res.json())
       .then((data) => {
         setBooksData(data);
@@ -26,7 +26,7 @@ const MyAddedBooks = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/addBook/${_id}`, {
+        fetch(`https://lm-server-mrnalve.vercel.app/addBook/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
